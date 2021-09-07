@@ -1,0 +1,44 @@
+{
+    "name": "TouchControls",
+    "maps": [
+        {
+            "name": "Bird",
+            "id": "09256591-e401-4f6a-b573-1aac3c7ac9fe",
+            "actions": [
+                {
+                    "name": "Flap",
+                    "type": "Button",
+                    "id": "d7ec68dc-d870-4110-bfa4-ad89b35a496e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fe83a6d0-2dbf-4501-9f20-5cf179270623",
+                    "path": "<Touchscreen>/press",
+                    "interactions": "Press(pressPoint=0.01)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b825566-5779-4097-9f91-a00eb78c6651",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(pressPoint=0.01)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

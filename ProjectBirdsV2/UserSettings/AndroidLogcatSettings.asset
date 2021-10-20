@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "181846V01511136",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 18549,
+        "processId": 3152,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,18 +12,90 @@
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 16109,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 16544,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 18549,
+            "exited": true
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 20515,
+            "exited": true
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 27020,
+            "exited": true
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.teslacoilsw.launcher",
+            "processId": 2991,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 29978,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 30300,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 4007,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 5180,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 14568,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 18956,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 19335,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 20844,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 3152,
             "exited": false
         }
     ],

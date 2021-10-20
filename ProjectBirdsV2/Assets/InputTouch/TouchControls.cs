@@ -51,6 +51,44 @@ public class @TouchControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""911aa497-94ac-44da-9ade-ecdd415e5b86"",
+            ""actions"": [
+                {
+                    ""name"": ""Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""88c04bf0-dfe8-465d-b54d-e6791f36110e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f3a083e1-662a-4bc5-b474-d50b447c88b9"",
+                    ""path"": ""<Touchscreen>/press"",
+                    ""interactions"": ""Hold(duration=0.01,pressPoint=0.01)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99d8fd53-c0d6-4b11-b465-e3d7df987670"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold(duration=0.01,pressPoint=0.01)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -58,6 +96,9 @@ public class @TouchControls : IInputActionCollection, IDisposable
         // Bird
         m_Bird = asset.FindActionMap("Bird", throwIfNotFound: true);
         m_Bird_Flap = m_Bird.FindAction("Flap", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_Hold = m_Menu.FindAction("Hold", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -136,8 +177,45 @@ public class @TouchControls : IInputActionCollection, IDisposable
         }
     }
     public BirdActions @Bird => new BirdActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_Hold;
+    public struct MenuActions
+    {
+        private @TouchControls m_Wrapper;
+        public MenuActions(@TouchControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Hold => m_Wrapper.m_Menu_Hold;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @Hold.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnHold;
+                @Hold.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnHold;
+                @Hold.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnHold;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Hold.started += instance.OnHold;
+                @Hold.performed += instance.OnHold;
+                @Hold.canceled += instance.OnHold;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface IBirdActions
     {
         void OnFlap(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnHold(InputAction.CallbackContext context);
     }
 }

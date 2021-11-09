@@ -10,7 +10,7 @@ public class Bird : MonoBehaviour
     public int flapRotation;
 
     private Rigidbody2D rb2d;
-    private TouchControls touchControls;
+    private PlayerControls touchControls;
 
     [SerializeField] private float flapForce;
 
@@ -27,7 +27,7 @@ public class Bird : MonoBehaviour
 
     private void Awake()
     {
-        touchControls = new TouchControls();
+        touchControls = new PlayerControls();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -88,7 +88,7 @@ public class Bird : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        score += 1;
+        score++;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

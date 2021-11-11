@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 
 public class MenuSwipe : MonoBehaviour
 {
-    public Scrollbar scrollbar;
     public float swipeRange;
     public float tapRange;
-    
+    public Scrollbar scrollbar;
+
     [SerializeField]
     private InputManager inputManager;
-    private PlayerControls touchControls;
 
     [SerializeField]
     private float minimumDistance = 0.2f;
@@ -27,14 +25,10 @@ public class MenuSwipe : MonoBehaviour
     private float endTime;
 
     [SerializeField]
+    private float lerpTime = 0.1f;
     private float[] menuScreens;
     private int currentMenuScreen;
 
-    private void Awake()
-    {
-        touchControls = new PlayerControls();
-        touchControls.Menu.Hold.Enable();
-    }
 
     private void Start()
     {
@@ -89,10 +83,9 @@ public class MenuSwipe : MonoBehaviour
 
             for (int i = 0; i < menuScreens.Length; i++)
             {
-                Debug.Log(i);
                 if (scrollPos < menuScreens[i] + (distance / 2) && scrollPos > menuScreens[i] - (distance / 2))
                 {
-                    StartCoroutine(LerpScreen(0.1f, menuScreens[i]));
+                    StartCoroutine(LerpScreen(lerpTime, menuScreens[i]));
                 }
             }
         }
@@ -103,18 +96,17 @@ public class MenuSwipe : MonoBehaviour
         if (Vector2.Dot(Vector2.left, direction) > directionThreshold && currentMenuScreen != 4)
         {
             currentMenuScreen++;
-            StartCoroutine(LerpScreen(0.1f, menuScreens[currentMenuScreen]));
+            StartCoroutine(LerpScreen(lerpTime, menuScreens[currentMenuScreen]));
         }
         else if (Vector2.Dot(Vector2.right, direction) > directionThreshold && currentMenuScreen != 0)
         {
             currentMenuScreen--;
-            StartCoroutine(LerpScreen(0.1f, menuScreens[currentMenuScreen]));
+            StartCoroutine(LerpScreen(lerpTime, menuScreens[currentMenuScreen]));
         }
     }
 
     private IEnumerator LerpScreen(float time, float endPosition)
     {
-        Debug.Log("MUITO ENUMERADO");
         float endPos = endPosition;
 
         float start = Time.time;

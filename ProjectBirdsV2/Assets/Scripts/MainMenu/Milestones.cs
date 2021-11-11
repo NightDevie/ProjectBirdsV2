@@ -15,7 +15,7 @@ public class Milestones
             CaseMilestone();
         }
     }
-
+    //remake, this is probably for high score milestone
     private void CaseMilestone()
     {
         switch (nextMilestone)

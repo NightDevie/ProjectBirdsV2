@@ -11,9 +11,12 @@ public class ProfileData : ScriptableObject
     public int playerBirthdayMonth;
     public List<int> scoreHistory = new List<int>();
 
-    [SerializeField] private int bestScore;
-    [SerializeField] private int gold;
-    [SerializeField] private int silver;
+    [SerializeField]
+    private int bestScore;
+    [SerializeField]
+    private int gold;
+    [SerializeField]
+    private int silver;
 
     public int BestScore
     {

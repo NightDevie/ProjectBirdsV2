@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class MenuSwipe : MonoBehaviour
 {
-    public float swipeRange;
-    public float tapRange;
-    public Scrollbar scrollbar;
+    [SerializeField]
+    private Scrollbar scrollbar;
 
     [SerializeField]
     private InputManager inputManager;
@@ -28,6 +27,11 @@ public class MenuSwipe : MonoBehaviour
     private float lerpTime = 0.1f;
     private float[] menuScreens;
     private int currentMenuScreen;
+
+
+    public GameObject[] buttons;
+    public Sprite[] buttonSprites;
+    public Sprite[] buttonSpritesSelected;
 
 
     private void Start()

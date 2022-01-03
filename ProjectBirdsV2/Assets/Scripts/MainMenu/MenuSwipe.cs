@@ -24,15 +24,16 @@ public class MenuSwipe : MonoBehaviour
     private float endTime;
 
     [SerializeField]
-    private float lerpTime = 0.1f;
+    private float lerpDuration = 0.1f;
     private float[] menuScreens;
     private int currentMenuScreen;
 
-
-    public GameObject[] buttons;
-    public Sprite[] buttonSprites;
-    public Sprite[] buttonSpritesSelected;
-
+    [SerializeField]
+    private GameObject[] buttons;
+    [SerializeField]
+    private Sprite[] buttonSprites;
+    [SerializeField]
+    private Sprite[] buttonSpritesSelected;
 
     private void Start()
     {
@@ -45,6 +46,21 @@ public class MenuSwipe : MonoBehaviour
         menuScreens[4] = 1f;
 
         currentMenuScreen = 2;
+
+        for (int i = 0; i <= 4; i++)
+        {
+            int x = i;
+            buttons[x].GetComponent<Button>().onClick.AddListener(() => onButtonClick(x));
+        }
+    }
+
+    private void onButtonClick(int n)
+    {
+        buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSprites[currentMenuScreen];
+        currentMenuScreen = n;
+        buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSpritesSelected[currentMenuScreen];
+
+        StartCoroutine(LerpScreen(menuScreens[currentMenuScreen], lerpDuration));
     }
 
     private void OnEnable()
@@ -78,6 +94,7 @@ public class MenuSwipe : MonoBehaviour
         {
             Vector3 direction = endPosition - startPosition;
             Vector2 direction2D = new Vector2(direction.x, direction.y).normalized;
+
             SwipeDirection(direction2D);
         }
         else
@@ -89,7 +106,15 @@ public class MenuSwipe : MonoBehaviour
             {
                 if (scrollPos < menuScreens[i] + (distance / 2) && scrollPos > menuScreens[i] - (distance / 2))
                 {
-                    StartCoroutine(LerpScreen(lerpTime, menuScreens[i]));
+                    if(currentMenuScreen != i)
+                    {
+                        buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSprites[currentMenuScreen];
+                        currentMenuScreen = i;
+                        buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSpritesSelected[currentMenuScreen];
+                    }
+
+                    StartCoroutine(LerpScreen(menuScreens[i], lerpDuration));
+                    break;
                 }
             }
         }
@@ -99,28 +124,51 @@ public class MenuSwipe : MonoBehaviour
     {
         if (Vector2.Dot(Vector2.left, direction) > directionThreshold && currentMenuScreen != 4)
         {
+            buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSprites[currentMenuScreen];
             currentMenuScreen++;
-            StartCoroutine(LerpScreen(lerpTime, menuScreens[currentMenuScreen]));
+            buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSpritesSelected[currentMenuScreen];
+
+            StartCoroutine(LerpScreen(menuScreens[currentMenuScreen], lerpDuration));
         }
         else if (Vector2.Dot(Vector2.right, direction) > directionThreshold && currentMenuScreen != 0)
         {
+            buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSprites[currentMenuScreen];
             currentMenuScreen--;
-            StartCoroutine(LerpScreen(lerpTime, menuScreens[currentMenuScreen]));
+            buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSpritesSelected[currentMenuScreen];
+
+            StartCoroutine(LerpScreen(menuScreens[currentMenuScreen], lerpDuration));
+        }
+        else
+        {
+            StartCoroutine(LerpScreen(menuScreens[currentMenuScreen], lerpDuration));
         }
     }
-
-    private IEnumerator LerpScreen(float time, float endPosition)
+    private IEnumerator LerpScreen(float endPosition, float duration)
     {
-        float endPos = endPosition;
+        float time = 0;
 
-        float start = Time.time;
-
-        while (Time.time < start + time)
+        while (time < duration)
         {
-            scrollbar.value = Mathf.Lerp(scrollbar.value, endPos, 0.1f);
+            scrollbar.value = Mathf.Lerp(scrollbar.value, endPosition, time / duration);
+            time += Time.deltaTime;
             yield return null;
         }
 
-        scrollbar.value = endPos;
+        scrollbar.value = endPosition;
     }
+
+    //private IEnumerator LerpScreen2(float time, float endPosition)
+    //{
+    //    float endPos = endPosition;
+
+    //    float start = Time.time;
+
+    //    while (Time.time < start + time)
+    //    {
+    //        scrollbar.value = Mathf.Lerp(scrollbar.value, endPos, 0.1f);
+    //        yield return null;
+    //    }
+
+    //    scrollbar.value = endPos;
+    //}
 }

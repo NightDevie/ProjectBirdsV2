@@ -2136,8 +2136,23 @@ MonoBehaviour:
   inputManager: {fileID: 1654569024}
   minimumDistance: 0.2
   maximumTime: 1
-  directionThreshold: 0.9
-  lerpTime: 0.15
-  buttons: []
-  buttonSprites: []
-  buttonSpritesSelected: []
+  directionThreshold: 0.6
+  lerpDuration: 0.2
+  buttons:
+  - {fileID: 416036693}
+  - {fileID: 1230032460}
+  - {fileID: 902373165}
+  - {fileID: 1126221871}
+  - {fileID: 1063086394}
+  buttonSprites:
+  - {fileID: -530043984891390113, guid: 2778b511c59f5f04c9d085b332c19fd9, type: 3}
+  - {fileID: 1503685636009766024, guid: 6441f159043eb2c40bc31fac75dae9d1, type: 3}
+  - {fileID: 6350285519412582740, guid: e34e49bb0caf6d748a0338c5da9dc908, type: 3}
+  - {fileID: -159699223714283492, guid: dfba3f762be18e04ca36002567a34c50, type: 3}
+  - {fileID: 9162993847180508390, guid: e8cf76a5ba075dd4e9d769b468de23b8, type: 3}
+  buttonSpritesSelected:
+  - {fileID: -530043984891390113, guid: 1751bbe5578c16b4e9e721af5e10209c, type: 3}
+  - {fileID: 1503685636009766024, guid: 85d257b92aff25045a49c3fea09e43fd, type: 3}
+  - {fileID: 6350285519412582740, guid: 9ef6682965e852a4a8670199648ee233, type: 3}
+  - {fileID: -159699223714283492, guid: fa174bcc3587e81458736e63ecae150b, type: 3}
+  - {fileID: 9162993847180508390, guid: b753bcca0c8e09648bb632acb1039b19, type: 3}

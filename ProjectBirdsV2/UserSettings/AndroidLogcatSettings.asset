@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "181846V01511136",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "181846V01511136",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 29312,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -43,6 +43,42 @@
             "name": "org.telegram.messenger",
             "processId": 11206,
             "exited": true
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 18268,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 24095,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 9230,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 10459,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 11020,
+            "exited": false
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 29312,
+            "exited": false
         },
         {
             "deviceId": "5T7PRWGAPVJ76SNR",

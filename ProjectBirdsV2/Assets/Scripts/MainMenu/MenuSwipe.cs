@@ -50,11 +50,11 @@ public class MenuSwipe : MonoBehaviour
         for (int i = 0; i <= 4; i++)
         {
             int x = i;
-            buttons[x].GetComponent<Button>().onClick.AddListener(() => onButtonClick(x));
+            buttons[x].GetComponent<Button>().onClick.AddListener(() => OnButtonClick(x));
         }
     }
 
-    private void onButtonClick(int n)
+    private void OnButtonClick(int n)
     {
         buttons[currentMenuScreen].GetComponent<Image>().sprite = buttonSprites[currentMenuScreen];
         currentMenuScreen = n;

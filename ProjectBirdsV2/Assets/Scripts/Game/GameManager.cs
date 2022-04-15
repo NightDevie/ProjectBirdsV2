@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public string stateName;
     public Bird bird;
     public ObstacleManager obstacleManager;
+    public GameUIManager gameUIManager;
 
     private void Awake()
     {

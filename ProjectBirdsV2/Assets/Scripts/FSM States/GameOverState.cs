@@ -11,6 +11,7 @@ public class GameOverState : State
         score = gM.bird.score;
         SetScore();
         SetSilver();
+        gM.gameUIManager.EnableDisableGameOverMenu(true);
     }
 
     private bool CalculateEggDrop(int score) // if player don't drop for 10000 score added, they should maybe drop.

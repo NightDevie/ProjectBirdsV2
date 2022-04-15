@@ -9,13 +9,13 @@ public class FlyingState : State
         Debug.Log("Entering FlyingState");
         gM.obstacleManager.ObstaclePoolSpawn();
         gM.bird.EnableFlap();
+        gM.bird.UnFreezeBirdY();
     }
 
     public override void Update()
     {
         gM.obstacleManager.ObstacleReposition();
-        //gM.bird.RotateBird();
-        //gS.obstacleMover.MoveObstacles();
+        gM.bird.RotateBird();
     }
 
     public override void OnStateExit()

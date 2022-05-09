@@ -10,11 +10,16 @@ public class Bird : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private PlayerControls touchControls;
-
+    
     [SerializeField]
     private float flapForce;
 
     private bool gameOver = false;
+
+    private bool up = true;
+
+    
+
 
     private void Awake()
     {
@@ -35,16 +40,15 @@ public class Bird : MonoBehaviour
 
     public void RotateBird()
     {
-        if( gameOver == false)
+        if (rb2d.velocity.y > -1f)
         {
-            if (rb2d.velocity.y > -1f)
-            {
-                rb2d.transform.DORotate(new Vector3(0f, 0f, 25f), 0.1f);
-            }
-            else
-            {
-                rb2d.transform.DORotate(new Vector3(0f, 0f, -90f), 2f);
-            }
+            rb2d.transform.DOLocalRotate(new Vector3(0f, 0f, 30f), 0.1f).SetEase(Ease.OutQuad);
+            up = false;
+        }
+        else if(rb2d.velocity.y < -1f && up == false)
+        {
+            rb2d.transform.DOLocalRotate(new Vector3(0f, 0f, -90f), 0.6f).SetEase(Ease.InQuad);
+            up = true;
         }
     }
 
@@ -69,19 +73,21 @@ public class Bird : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         score++;
+        GameManager.gM.gameUIManager.SetScore(score);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameManager.gM.SwitchState(new GameOverState());
 
-        if(gameOver == false)
+        if(gameOver == false && collision.gameObject.tag == "Obstacle")
         {
             foreach (BoxCollider2D bc2d in collision.gameObject.GetComponentsInChildren<BoxCollider2D>())
             {
                 bc2d.enabled = false;
             }
         }
+
         gameOver = true;
     }
 }

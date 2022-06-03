@@ -8,6 +8,7 @@ public class FlyingState : State
     {
         Debug.Log("Entering FlyingState");
         gM.obstacleManager.ObstaclePoolSpawn();
+        gM.bird.animator.SetBool("GameStarted", true);
         gM.bird.EnableFlap();
         gM.bird.UnFreezeBirdY();
     }
@@ -16,6 +17,7 @@ public class FlyingState : State
     {
         gM.obstacleManager.ObstacleReposition();
         gM.bird.RotateBird();
+        gM.bird.animator.SetFloat("BirdSpeed", gM.bird.rb2d.velocity.y);
     }
 
     public override void OnStateExit()

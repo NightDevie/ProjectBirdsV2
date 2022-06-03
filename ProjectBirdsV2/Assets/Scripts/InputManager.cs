@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[DefaultExecutionOrder(-1)]
 public class InputManager : MonoBehaviour
 {
     #region Events
@@ -15,7 +16,11 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
+        if (playerControls == null)
+        {
+            playerControls = new PlayerControls();
+        }
+
         mainCamera = Camera.main;
     }
 

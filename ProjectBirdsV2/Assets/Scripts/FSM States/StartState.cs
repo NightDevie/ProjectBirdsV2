@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
+using UnityEngine.InputSystem.Utilities;
 
 public class StartState : State
 {
-    bool touchReady = false;
 
     public override void OnStateEnter()
     {
@@ -14,24 +15,12 @@ public class StartState : State
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Screen.currentResolution.refreshRate;
 
-        touchReady = true;
+        InputSystem.onAnyButtonPress.CallOnce(ctrl => gM.SwitchState(new FlyingState()));
     }
 
     public override void Update()
     {
-        if (touchReady == true)
-        {
-            TouchStart();
-        }
-
-    }
-
-    private void TouchStart()
-    {
-        if (Input.touchCount > 0 || Mouse.current.leftButton.isPressed)
-        {
-            gM.SwitchState(new FlyingState());
-        }
+        
     }
 
     public override void OnStateExit()

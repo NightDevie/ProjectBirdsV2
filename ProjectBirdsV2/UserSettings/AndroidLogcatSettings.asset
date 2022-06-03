@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "181846V01511136",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 27152,
+        "processId": 25109,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,103 +11,43 @@
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 24014,
+            "processId": 30954,
             "exited": true
         },
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 25381,
+            "processId": 32499,
             "exited": true
         },
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 28797,
+            "processId": 1181,
             "exited": true
         },
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 5043,
-            "exited": true
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.teslacoilsw.launcher",
-            "processId": 10753,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "org.telegram.messenger",
-            "processId": 11206,
+            "processId": 1500,
             "exited": true
         },
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 18268,
+            "processId": 1998,
+            "exited": true
+        },
+        {
+            "deviceId": "181846V01511136",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 4142,
             "exited": false
         },
         {
             "deviceId": "181846V01511136",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 24095,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 9230,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 10459,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 11020,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 29312,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 31277,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 31671,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 25253,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 23103,
-            "exited": false
-        },
-        {
-            "deviceId": "181846V01511136",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 27152,
+            "processId": 25109,
             "exited": false
         },
         {

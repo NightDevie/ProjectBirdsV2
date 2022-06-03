@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using System;
 
 public class Bird : MonoBehaviour
 {
     public int score;
 
-    private Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
+
+    [SerializeField]
     private PlayerControls touchControls;
     
     [SerializeField]
@@ -18,12 +21,15 @@ public class Bird : MonoBehaviour
 
     private bool up = true;
 
-    
-
+    public Animator animator;
 
     private void Awake()
     {
-        touchControls = new PlayerControls();
+        if (touchControls == null)
+        {
+            touchControls = new PlayerControls();
+        }
+
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -68,6 +74,8 @@ public class Bird : MonoBehaviour
     {
         //rb2d.AddForce(Vector2.up * flapForce);
         rb2d.velocity = Vector2.up * flapForce;
+
+        animator.SetTrigger("BirdFlap");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

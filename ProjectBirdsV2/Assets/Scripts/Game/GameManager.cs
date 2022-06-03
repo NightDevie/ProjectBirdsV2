@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         state?.Update();
     }
+
     private void FixedUpdate()
     {
         state?.FixedUpdate();

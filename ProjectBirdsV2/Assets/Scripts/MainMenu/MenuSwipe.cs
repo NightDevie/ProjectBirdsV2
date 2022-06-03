@@ -156,19 +156,4 @@ public class MenuSwipe : MonoBehaviour
 
         scrollbar.value = endPosition;
     }
-
-    //private IEnumerator LerpScreen2(float time, float endPosition)
-    //{
-    //    float endPos = endPosition;
-
-    //    float start = Time.time;
-
-    //    while (Time.time < start + time)
-    //    {
-    //        scrollbar.value = Mathf.Lerp(scrollbar.value, endPos, 0.1f);
-    //        yield return null;
-    //    }
-
-    //    scrollbar.value = endPos;
-    //}
 }

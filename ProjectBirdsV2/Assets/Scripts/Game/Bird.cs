@@ -46,14 +46,14 @@ public class Bird : MonoBehaviour
 
     public void RotateBird()
     {
-        if (rb2d.velocity.y > -1f)
+        if (rb2d.velocity.y > -1.75f)
         {
-            rb2d.transform.DOLocalRotate(new Vector3(0f, 0f, 30f), 0.1f).SetEase(Ease.OutQuad);
+            rb2d.transform.DOLocalRotate(new Vector3(0f, 0f, 25f), 0.1f).SetEase(Ease.OutQuad);
             up = false;
         }
-        else if(rb2d.velocity.y < -1f && up == false)
+        else if(rb2d.velocity.y < -1.75f && up == false)
         {
-            rb2d.transform.DOLocalRotate(new Vector3(0f, 0f, -90f), 0.6f).SetEase(Ease.InQuad);
+            rb2d.transform.DOLocalRotate(new Vector3(0f, 0f, -90f), 0.75f).SetEase(Ease.InQuad);
             up = true;
         }
     }
@@ -76,6 +76,8 @@ public class Bird : MonoBehaviour
         rb2d.velocity = Vector2.up * flapForce;
 
         animator.SetTrigger("BirdFlap");
+
+        Debug.Log(context.action.WasPressedThisFrame());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

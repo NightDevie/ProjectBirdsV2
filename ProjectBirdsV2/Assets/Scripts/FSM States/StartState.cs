@@ -12,9 +12,6 @@ public class StartState : State
     {
         Debug.Log("Entering StartState");
 
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
-
         InputSystem.onAnyButtonPress.CallOnce(ctrl => gM.SwitchState(new FlyingState()));
     }
 

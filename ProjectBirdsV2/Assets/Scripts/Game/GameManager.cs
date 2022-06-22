@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
         state?.FixedUpdate();
     }
 
+    private void LateUpdate()
+    {
+        state?.LateUpdate();
+    }
+
     public void SwitchState(State newState)
     {
         state?.OnStateExit();

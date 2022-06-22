@@ -13,7 +13,7 @@ public class FlyingState : State
         gM.bird.UnFreezeBirdY();
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
         gM.obstacleManager.ObstacleReposition();
         gM.bird.RotateBird();

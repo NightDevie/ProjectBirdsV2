@@ -9,14 +9,7 @@ public class GameUIManager : MonoBehaviour
     private GameObject gameOverMenu;
 
     [SerializeField]
-    private GameObject scoreObject;
-
-    private TextMeshProUGUI score;
-
-    private void Start()
-    {
-        score = scoreObject.GetComponent<TextMeshProUGUI>();
-    }
+    private TMP_Text score;
 
     public void EnableDisableGameOverMenu(bool value)
     {
@@ -25,6 +18,6 @@ public class GameUIManager : MonoBehaviour
 
     public void SetScore(int sc)
     {
-        score.SetText(sc.ToString());
+        score.text = sc.ToString();
     }
 }

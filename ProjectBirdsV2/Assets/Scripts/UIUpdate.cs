@@ -10,10 +10,10 @@ public class UIUpdate : MonoBehaviour
     {
         //Time.fixedDeltaTime = 1 / 60;
         //Application.targetFrameRate = Screen.currentResolution.refreshRate;
-        //InputSystem.pollingFrequency = 120;
+        InputSystem.pollingFrequency = Screen.currentResolution.refreshRate;
 
-        //Application.targetFrameRate = 57;
-        //QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
     }
 
     //void OnGUI()
